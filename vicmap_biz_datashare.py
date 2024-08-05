@@ -3,12 +3,6 @@ Vicmap unzip
 '''
 ##try: 
 import os
-import sys
-# make sure this path is correct and it contains
-# sendErrorEmail.py script
-scriptdir = f'D:\ArcGISCatalog\PYs\email_errors'
-sys.path.insert(0, scriptdir) 
-from sendErrorEmail import sendEmail
 import zipfile
 import glob
 from datetime import date
@@ -122,7 +116,4 @@ for shp in ap.ListFeatureClasses('*'):
         # since there is no other script to cleanup these files
         ap.Delete_management(shp)
     else:
-        pass
-##except Exception as error:
-##    scriptName = os.path.basename(__file__)
-##    sendEmail(scriptName, error)
+        pass # This pass is okay since we don't work with other list members.
